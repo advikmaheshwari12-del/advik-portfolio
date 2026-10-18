@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Advik Maheshwari | Portfolio</title>
+    <meta name="description" content="Advik Maheshwari - MBA Tech (Data Science) student at NMIMS.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Hind:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --asphalt: #26231f; 
+            --yellow: #f5b800; 
+            --green: #1e8a4c; 
+            --red: #d6342c; 
+            --chalk: #f2efe6;
+            --blue: #2a75d3;
+            --sign: 'Bungee', 'Impact', sans-serif; 
+            --body: 'Hind', 'Segoe UI', Arial, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+        
+        body {
+            background: var(--asphalt);
+            color: var(--chalk);
+            font-family: var(--body);
+            font-size: 1.05rem;
+            line-height: 1.65;
+            background-image: radial-gradient(rgba(255,255,255,.04) 1px, transparent 1px);
+            background-size: 18px 18px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        a { color: var(--yellow); }
+        :focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: #111;
+            border-bottom: 4px solid var(--yellow);
+            padding: .6rem 1rem .5rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            max-width: 760px;
+            margin: 0 auto;
+            position: relative;
+        }
+        nav ul::before {
+            content: "";
+            position: absolute;
+            left: 8%;
+            right: 8%;
+            top: 9px;
+            height: 5px;
+            background: var(--red);
+        }
+        nav li { position: relative; flex: 1; text-align: center; }
+        nav a {
+            text-decoration: none;
+            color: var(--chalk);
+            font-size: .8rem;
+            font-weight: 600;
+            display: block;
+        }
+        nav a::before {
+            content: "";
+            display: block;
+            width: 16px;
+            height: 16px;
+            margin: 1px auto 3px;
+            border-radius: 50%;
+            background: var(--chalk);
+            border: 4px solid var(--red);
+            position: relative;
+        }
+        nav a:hover, nav a.on { color: var(--yellow); }
+        nav a.on::before { background: var(--yellow); }
+
+        main { max-width: 900px; margin: 0 auto; padding: 0 1rem 6rem; position: relative; z-index: 2; }
+
+        .hero {
+            margin: 2rem 0 3rem;
+            background: var(--red);
+            border: 6px solid var(--yellow);
+            outline: 3px solid var(--asphalt);
+            outline-offset: -12px;
+            padding: 2.5rem 1.2rem;
+            text-align: center;
+            box-shadow: 8px 8px 0 #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "🛺";
+            font-size: 3rem;
+            position: absolute;
+            bottom: -5px;
+            left: -50px;
+            animation: driveAcross 10s linear infinite;
+            opacity: 0.9;
+        }
+        @keyframes driveAcross {
+            0% { left: -50px; transform: scaleX(-1); }
+            49% { left: 105%; transform: scaleX(-1); }
+            50% { left: 105%; transform: scaleX(1); }
+            100% { left: -50px; transform: scaleX(1); }
+        }
+
+        .kite {
+            position: absolute;
+            z-index: 1;
+            opacity: 0.9;
+            animation: flyKite 6s ease-in-out infinite alternate;
+        }
+        .kite-1 { top: 10%; left: 10%; animation-delay: 0s; font-size: 2.5rem; }
+        .kite-2 { top: 20%; right: 15%; animation-delay: -2s; font-size: 1.8rem; }
+        .kite-3 { top: 5%; right: 30%; animation-delay: -4s; font-size: 2.2rem; }
+        
+        @keyframes flyKite {
+            0% { transform: translateY(0) translateX(0) rotate(-10deg); }
+            50% { transform: translateY(-20px) translateX(15px) rotate(15deg); }
+            100% { transform: translateY(10px) translateX(-10px) rotate(-5deg); }
+        }
+
+        .hero .hi { font-family: var(--body); font-weight: 700; font-size: 1.3rem; color: var(--yellow); position: relative; z-index: 2; }
+        .hero h1 { font-family: var(--sign); font-weight: 400; font-size: clamp(2rem, 9vw, 4.6rem); line-height: 1.05; color: var(--chalk); text-shadow: 4px 4px 0 #000; margin: .4rem 0; position: relative; z-index: 2; }
+        .hero .hindi { font-size: clamp(1.3rem, 5vw, 2rem); font-weight: 700; color: var(--yellow); position: relative; z-index: 2; }
+        .hero .sub { margin-top: 1rem; font-weight: 600; position: relative; z-index: 2; }
+        .hero .tag { display: inline-block; margin-top: 1.2rem; background: var(--green); color: #fff; padding: .3rem 1rem; font-family: var(--sign); font-size: .85rem; border: 3px solid var(--chalk); transform: rotate(-2deg); position: relative; z-index: 2; }
+
+        section { margin-bottom: 3.5rem; }
+        h2 { font-family: var(--sign); font-weight: 400; font-size: clamp(1.4rem, 5vw, 2rem); background: var(--yellow); color: #111; display: inline-block; padding: .2rem 1rem; border: 3px solid #000; box-shadow: 5px 5px 0 var(--green); margin-bottom: 1.2rem; transform: rotate(-1deg); }
+        .stripe { height: 10px; margin: 0 0 1.5rem; background: repeating-linear-gradient(90deg, var(--red) 0 24px, var(--yellow) 24px 48px, var(--green) 48px 72px); }
+        
+        .about p { max-width: 65ch; margin-bottom: 1rem; }
+        .about .lead { font-size: 1.2rem; font-weight: 600; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; }
+        .shop { background: #1b1917; border: 3px solid var(--chalk); border-top: 14px solid var(--green); padding: 1rem 1.1rem 1.2rem; }
+        .shop:nth-child(2) { border-top-color: var(--red); }
+        .shop:nth-child(3) { border-top-color: var(--yellow); }
+        .shop h3 { font-family: var(--sign); font-weight: 400; font-size: 1.1rem; color: var(--yellow); margin-bottom: .4rem; }
+        .shop .meta { font-size: .9rem; opacity: .75; margin-bottom: .5rem; }
+        .shop .tools { margin-top: .7rem; font-weight: 600; color: var(--green); filter: brightness(1.6); }
+
+        .menu { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+        .board { background: var(--chalk); color: #111; padding: 1.1rem 1.3rem; border: 4px solid #000; box-shadow: 6px 6px 0 var(--red); }
+        .board h3 { font-family: var(--sign); font-weight: 400; font-size: 1.1rem; margin-bottom: .6rem; }
+        .board ul { list-style: none; }
+        .board li { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 2px dashed #888; padding: .35rem 0; }
+        .board li span:last-child { font-weight: 700; color: var(--green); }
+        .board.int li { justify-content: flex-start; }
+        .board.int li::before { content: "📍"; margin-right: 5px; }
+
+        .contact ul { list-style: none; display: grid; gap: .6rem; max-width: 520px; }
+        .contact a { display: flex; align-items: center; gap: 12px; padding: .7rem 1rem; background: var(--green); color: #fff; text-decoration: none; font-weight: 700; border: 3px solid var(--chalk); box-shadow: 4px 4px 0 #000; transition: background 0.2s; }
+        .contact li:nth-child(4) a { background: var(--red); }
+        .contact a:hover { background: var(--red); filter: brightness(1.1); }
+
+        .delhi-skyline {
+            width: 100%;
+            height: 120px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 120' preserveAspectRatio='xMidYMax meet'%3E%3C!-- India Gate --%3E%3Cpath d='M30 120 V50 h60 V120 h-15 V70 a 15 15 0 0 0 -30 0 V120 Z M40 50 V40 h40 V50 Z M50 40 V30 h20 V40 Z' fill='%232a75d3' opacity='0.85'/%3E%3C!-- Lotus Temple --%3E%3Cpath d='M190 120 C170 80 190 40 220 15 C250 40 270 80 250 120 C240 90 200 90 190 120 Z M220 15 C200 60 210 100 220 120 C230 100 240 60 220 15 Z' fill='%231e8a4c' opacity='0.85'/%3E%3C!-- Qutub Minar --%3E%3Cpath d='M415 120 L425 10 h10 L445 120 Z M417 90 h26 v4 h-26 Z M419 60 h22 v4 h-22 Z M421 30 h18 v4 h-18 Z' fill='%23d6342c' opacity='0.85'/%3E%3C!-- Bharat Mandapam (Natraj Convention) --%3E%3Cpath d='M580 120 C560 60 760 60 740 120 Z M615 70 C630 35 690 35 705 70 Z' fill='%23f5b800' opacity='0.85'/%3E%3C!-- Shaheed Smarak (War Memorial) --%3E%3Cpath d='M830 120 L850 20 h10 L880 120 Z M845 120 L855 40 L865 120 Z M820 120 v-15 h70 v15 Z' fill='%23f2efe6' opacity='0.8'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+            background-position: bottom;
+            background-size: auto 100%;
+            margin-bottom: -20px;
+            pointer-events: none;
+        }
+
+        footer { text-align: center; padding: 2rem 1rem 5rem; border-top: 4px dashed var(--yellow); font-size: .9rem; }
+
+        #fare { position: fixed; right: 12px; bottom: 12px; z-index: 20; background: #000; color: var(--yellow); border: 3px solid var(--yellow); padding: .35rem .8rem; font-family: var(--sign); font-size: 1rem; box-shadow: 3px 3px 0 var(--red); display: flex; flex-direction: column; align-items: center; }
+        #fare small { font-family: var(--body); font-size: .65rem; color: var(--chalk); letter-spacing: 1px; }
+
+        #metro-btn { position: fixed; left: 12px; bottom: 12px; z-index: 20; background: #111; color: var(--chalk); border: 3px solid var(--green); padding: .6rem 1rem; font-family: var(--sign); font-size: .9rem; box-shadow: 3px 3px 0 var(--blue); cursor: pointer; transition: transform 0.2s; }
+        #metro-btn:hover { transform: scale(1.05); }
+
+        #metro-modal { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.9); z-index: 100; display: none; flex-direction: column; align-items: center; justify-content: center; padding: 1rem; }
+        .modal-content { background: var(--chalk); width: 100%; max-width: 800px; height: 80vh; border: 6px solid #111; box-shadow: 8px 8px 0 var(--red); display: flex; flex-direction: column; position: relative; overflow: hidden; }
+        .modal-header { background: #111; color: var(--yellow); padding: 1rem; font-family: var(--sign); display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid var(--blue); }
+        .close-btn { background: var(--red); color: white; border: 2px solid white; padding: 0.3rem 0.8rem; font-family: var(--sign); cursor: pointer; }
+        
+        #map-view { flex: 1; position: relative; background: #e8e5dc; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .metro-line-y { position: absolute; width: 8px; height: 70%; background: var(--yellow); left: 50%; top: 15%; transform: translateX(-50%);}
+        .metro-line-b { position: absolute; height: 8px; width: 70%; background: var(--blue); top: 50%; left: 15%; transform: translateY(-50%);}
+        
+        .station { position: absolute; width: 24px; height: 24px; background: white; border: 6px solid #111; border-radius: 50%; cursor: pointer; transform: translate(-50%, -50%); z-index: 5; transition: transform 0.2s; }
+        .station:hover { transform: translate(-50%, -50%) scale(1.3); }
+        .station.active-st { background: var(--yellow); transform: translate(-50%, -50%) scale(1.4); border-color: var(--red); }
+        .station::after { content: attr(data-name); position: absolute; top: 25px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.8); color: white; padding: 2px 6px; font-family: var(--body); font-size: 0.8rem; font-weight: bold; white-space: nowrap; border-radius: 4px; pointer-events: none; }
+
+        #start-ride-btn { position: absolute; bottom: 20px; background: var(--green); color: white; border: 4px solid #111; padding: 0.8rem 2rem; font-family: var(--sign); font-size: 1.2rem; cursor: pointer; display: none; z-index: 10; box-shadow: 4px 4px 0 #111; }
+
+        #ride-view { flex: 1; display: none; background: #87CEEB; position: relative; }
+        canvas { display: block; width: 100%; height: 100%; }
+        #arrival-msg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: var(--sign); font-size: 2.5rem; color: #111; text-shadow: 2px 2px 0 var(--yellow); display: none; text-align: center; background: rgba(255,255,255,0.9); padding: 1rem 2rem; border: 4px solid #111; border-radius: 10px; }
+
+        .crazy-bird {
+            position: fixed;
+            z-index: 9999;
+            pointer-events: none;
+            color: #111;
+            opacity: 0.85;
+            filter: drop-shadow(2px 4px 2px rgba(0,0,0,0.3));
+        }
+        .bird-1 { font-size: 2.2rem; animation: swoop1 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite; }
+        .bird-2 { font-size: 1.6rem; animation: swoop2 17s cubic-bezier(0.25, 0.1, 0.25, 1) infinite; animation-delay: -3s; }
+        .bird-3 { font-size: 2.8rem; animation: swoop3 14s ease-in-out infinite; animation-delay: -9s; }
+
+        @keyframes swoop1 {
+            0%   { left: -10vw; top: 80vh; transform: scaleX(1) rotate(15deg); }
+            20%  { left: 30vw; top: 20vh; transform: scaleX(1) rotate(-20deg); }
+            40%  { left: 60vw; top: 50vh; transform: scaleX(1) rotate(60deg); }
+            50%  { left: 110vw; top: -10vh; transform: scaleX(1) rotate(-10deg); }
+            51%  { left: 110vw; top: -10vh; transform: scaleX(-1) rotate(0deg); }
+            75%  { left: 40vw; top: 90vh; transform: scaleX(-1) rotate(45deg); }
+            99%  { left: -10vw; top: 80vh; transform: scaleX(-1) rotate(-15deg); }
+            100% { left: -10vw; top: 80vh; transform: scaleX(1) rotate(15deg); }
+        }
+        @keyframes swoop2 {
+            0%   { left: 110vw; top: 30vh; transform: scaleX(-1) rotate(-10deg); }
+            25%  { left: 60vw; top: 80vh; transform: scaleX(-1) rotate(40deg); }
+            50%  { left: -10vw; top: 40vh; transform: scaleX(-1) rotate(-20deg); }
+            51%  { left: -10vw; top: 40vh; transform: scaleX(1) rotate(0deg); }
+            75%  { left: 50vw; top: 10vh; transform: scaleX(1) rotate(-30deg); }
+            99%  { left: 110vw; top: 30vh; transform: scaleX(1) rotate(20deg); }
+            100% { left: 110vw; top: 30vh; transform: scaleX(-1) rotate(-10deg); }
+        }
+        @keyframes swoop3 {
+            0%   { left: 50vw; top: 120vh; transform: scaleX(1) rotate(-60deg); }
+            20%  { left: 70vw; top: 40vh; transform: scaleX(1) rotate(-20deg); }
+            40%  { left: 90vw; top: 80vh; transform: scaleX(1) rotate(40deg); }
+            60%  { left: 110vw; top: 50vh; transform: scaleX(1) rotate(-10deg); }
+            61%  { left: 110vw; top: 50vh; transform: scaleX(-1) rotate(0deg); }
+            80%  { left: 20vw; top: 20vh; transform: scaleX(-1) rotate(-30deg); }
+            99%  { left: 50vw; top: 120vh; transform: scaleX(-1) rotate(50deg); }
+            100% { left: 50vw; top: 120vh; transform: scaleX(1) rotate(-60deg); }
+        }
+
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+        @media (max-width: 600px) {
+            #metro-btn { padding: 0.5rem; font-size: 0.8rem; }
+            #fare { padding: 0.4rem; font-size: 0.9rem; }
+            .hero { margin: 2rem 0.5rem; padding: 2rem 1rem; }
+            .station::after { font-size: 0.6rem; top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="crazy-bird bird-1">
+        <svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M22 10.98a41.07 41.07 0 00-8.82-3.15C11.53 7.37 9.8 4 9.8 4S8.9 5.86 8.35 7.64A40.06 40.06 0 002 10.98c2.93.9 6.2 2.37 8.1 4 0 0-1.85 4.02-2.1 6.02 1.45-1.5 3.32-3.83 4-5 1.03 1.17 2.55 3.5 4 5-.25-2-2.1-6.02-2.1-6.02 1.9-1.63 5.17-3.1 8.1-4z"/></svg>
+    </div>
+    <div class="crazy-bird bird-2">
+        <svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M22 10.98a41.07 41.07 0 00-8.82-3.15C11.53 7.37 9.8 4 9.8 4S8.9 5.86 8.35 7.64A40.06 40.06 0 002 10.98c2.93.9 6.2 2.37 8.1 4 0 0-1.85 4.02-2.1 6.02 1.45-1.5 3.32-3.83 4-5 1.03 1.17 2.55 3.5 4 5-.25-2-2.1-6.02-2.1-6.02 1.9-1.63 5.17-3.1 8.1-4z"/></svg>
+    </div>
+    <div class="crazy-bird bird-3">
+        <svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M22 10.98a41.07 41.07 0 00-8.82-3.15C11.53 7.37 9.8 4 9.8 4S8.9 5.86 8.35 7.64A40.06 40.06 0 002 10.98c2.93.9 6.2 2.37 8.1 4 0 0-1.85 4.02-2.1 6.02 1.45-1.5 3.32-3.83 4-5 1.03 1.17 2.55 3.5 4 5-.25-2-2.1-6.02-2.1-6.02 1.9-1.63 5.17-3.1 8.1-4z"/></svg>
+    </div>
+
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about" class="on">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <main>
+      <header class="hero">
+        <div class="kite kite-1">🪁</div>
+        <div class="kite kite-2">🪁</div>
+        <div class="kite kite-3">🪁</div>
+
+        <p class="hi">Namaste, I'm</p>
+        <h1>Advik Maheshwari</h1>
+        <p class="hindi">अद्विक माहेश्वरी</p>
+        <p class="sub">MBA Tech (Data Science) at NMIMS</p>
+        <span class="tag">Curious. Always moving.</span>
+      </header>
+    
+      <section id="about" class="about">
+        <h2>About</h2>
+        <div class="stripe"></div>
+        <p class="lead">I'm a curious, motivated guy who learns by exploring and taking on spontaneous challenges.</p>
+        <p>I'm a proud Delhiite at heart, though these days I spend most of my months navigating the Mumbai hustle for my MBA Tech at NMIMS. Whether I'm in Bombay for college or back home in Delhi, you'll probably catch me playing a sport, hunting down the absolute best momos and street food, or convincing my friends to go on an unplanned road trip.</p>
+        <p>I believe in continuous growth, teamwork, and making every single day count. I love stepping out of my comfort zone because that's where the best stories come from. I try to bring high energy, a positive attitude, and a bit of that hometown hustle to everything I do.</p>
+      </section>
+    
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="stripe"></div>
+        <div class="grid">
+          <article class="shop">
+            <h3>JUST DANCE</h3>
+            <p class="meta">Motion Tracking Game</p>
+            <p>I helped build an interactive pose-estimation game that evaluates dance moves in real-time. We wanted to solve the problem of automated scoring for dance battles, making it fun and competitive by mapping human poses to correct choreography.</p>
+            <p class="tools">Focus: Computer Vision, Real-Time Tracking</p>
+          </article>
+    
+          <article class="shop">
+            <h3>BORDER SURVEILLANCE</h3>
+            <p class="meta">AI Security Model</p>
+            <p>Designed a computer vision model to detect unauthorized intrusions across restricted perimeters. It acts as an automated eye, processing video feeds to spot anomalies and instantly alert authorities to keep boundaries fully secure.</p>
+            <p class="tools">Focus: YOLO, Object Detection, Security</p>
+          </article>
+        </div>
+      </section>
+    
+      <section id="skills">
+        <h2>Skills &amp; Interests</h2>
+        <div class="stripe"></div>
+        <div class="menu">
+          <div class="board">
+            <h3>Technical skills</h3>
+            <ul>
+              <li><span>SQL</span><span>Data queries</span></li>
+              <li><span>Python</span><span>Analysis &amp; scripts</span></li>
+              <li><span>C++</span><span>Programming</span></li>
+            </ul>
+          </div>
+          <div class="board int">
+            <h3>When I'm not studying</h3>
+            <ul>
+              <li>Playing all kinds of sports</li>
+              <li>Spontaneous road trips out of Delhi</li>
+              <li>Finding the best street food spots</li>
+              <li>Watching movies and web series</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    
+      <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <div class="stripe"></div>
+        <p style="margin-bottom:1rem">Say hello. I reply faster than a Delhi auto changes lanes.</p>
+        <ul>
+          <li><a href="mailto:YOUR_EMAIL@example.com">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            Email: YOUR_EMAIL@example.com
+          </a></li>
+          <li><a href="https://www.linkedin.com/in/YOUR-LINKEDIN-ID" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            LinkedIn
+          </a></li>
+          <li><a href="https://github.com/YOUR-GITHUB-USERNAME" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            GitHub
+          </a></li>
+          <li><a href="https://www.instagram.com/YOUR-INSTAGRAM-ID" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            Instagram
+          </a></li>
+        </ul>
+      </section>
+    </main>
+    
+    <div class="delhi-skyline"></div>
+
+    <footer>Made by Advik Maheshwari. Chalo, see you around.</footer>
+    
+    <button id="metro-btn" onclick="openMetro()">🚇 DELHI METRO RIDE</button>
+    <div id="fare" aria-hidden="true"><small>FARE METER</small><span id="amt">&#8377;10</span></div>
+    
+    <div id="metro-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>DELHI METRO SIMULATOR</span>
+                <button class="close-btn" onclick="closeMetro()">X</button>
+            </div>
+            
+            <div id="map-view">
+                <h3 style="position:absolute; top:20px; font-family:var(--sign);">SELECT A STATION</h3>
+                
+                <div class="metro-line-y"></div>
+                <div class="metro-line-b"></div>
+                
+                <!-- Stations -->
+                <div class="station" style="top:20%; left:50%; border-color:var(--yellow);" data-name="Kashmere Gate" onclick="selectStation(this, 'Yellow', 'Kashmere Gate', ['Chandni Chowk', 'Red Fort', 'Delhi Gate'])"></div>
+                <div class="station" style="top:50%; left:50%; border-color:#111;" data-name="Rajiv Chowk" onclick="selectStation(this, 'Hub', 'Rajiv Chowk', ['Connaught Place', 'Palika Bazaar', 'Janpath'])"></div>
+                <div class="station" style="top:80%; left:50%; border-color:var(--yellow);" data-name="Hauz Khas" onclick="selectStation(this, 'Yellow', 'Hauz Khas', ['Qutub Minar', 'Deer Park', 'Saket'])"></div>
+                
+                <div class="station" style="top:50%; left:20%; border-color:var(--blue);" data-name="Dwarka" onclick="selectStation(this, 'Blue', 'Dwarka', ['Rajouri Garden', 'Karol Bagh', 'Patel Nagar'])"></div>
+                <div class="station" style="top:50%; left:80%; border-color:var(--blue);" data-name="Noida" onclick="selectStation(this, 'Blue', 'Noida', ['Akshardham', 'Yamuna Bank', 'Mayur Vihar'])"></div>
+
+                <button id="start-ride-btn" onclick="startRide()">START RIDE</button>
+            </div>
+
+            <div id="ride-view">
+                <canvas id="metroCanvas"></canvas>
+                <div id="arrival-msg">ARRIVED AT<br><span id="dest-name" style="color:var(--red);"></span></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // Fare meter logic (10 to 60) and navigation highlight
+    var amt = document.getElementById('amt');
+    var links = document.querySelectorAll('nav a');
+    var secs = Array.prototype.map.call(links, function(a){ return document.querySelector(a.getAttribute('href')); });
+    
+    function update(){
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var p = max > 0 ? window.scrollY / max : 0;
+      var fare = Math.min(60, Math.floor(10 + (p * 50)));
+      amt.textContent = '\u20B9' + fare;
+    
+      var current = 0;
+      secs.forEach(function(s, i){ if (s && s.getBoundingClientRect().top < window.innerHeight * 0.4) current = i; });
+      links.forEach(function(a, i){ a.classList.toggle('on', i === current); });
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    window.addEventListener('load', update);
+
+    // Metro Simulator Game Logic
+    const modal = document.getElementById('metro-modal');
+    const mapView = document.getElementById('map-view');
+    const rideView = document.getElementById('ride-view');
+    const startBtn = document.getElementById('start-ride-btn');
+    const arrivalMsg = document.getElementById('arrival-msg');
+    const destName = document.getElementById('dest-name');
+    const canvas = document.getElementById('metroCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    let selectedLine = '';
+    let selectedStationName = '';
+    let localities = [];
+    let animationId;
+    let offset = 0;
+    let rideActive = false;
+
+    function openMetro() {
+        modal.style.display = 'flex';
+        mapView.style.display = 'flex';
+        rideView.style.display = 'none';
+        startBtn.style.display = 'none';
+        arrivalMsg.style.display = 'none';
+        document.querySelectorAll('.station').forEach(el => el.classList.remove('active-st'));
+    }
+
+    function closeMetro() {
+        modal.style.display = 'none';
+        rideActive = false;
+        cancelAnimationFrame(animationId);
+    }
+
+    function selectStation(element, lineColor, name, spots) {
+        document.querySelectorAll('.station').forEach(el => el.classList.remove('active-st'));
+        element.classList.add('active-st');
+        selectedLine = lineColor;
+        selectedStationName = name;
+        localities = spots;
+        startBtn.style.display = 'block';
+        startBtn.innerText = "BOARD TRAIN AT " + name.toUpperCase();
+    }
+
+    function startRide() {
+        mapView.style.display = 'none';
+        rideView.style.display = 'block';
+        canvas.width = rideView.clientWidth;
+        canvas.height = rideView.clientHeight;
+        offset = 0;
+        rideActive = true;
+        arrivalMsg.style.display = 'none';
+        destName.innerText = selectedStationName.toUpperCase();
+        
+        animateRide();
+
+        setTimeout(() => {
+            rideActive = false;
+            arrivalMsg.style.display = 'block';
+        }, 6000);
+    }
+
+    function animateRide() {
+        if (!rideActive) return;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Background Sky/Ground
+        ctx.fillStyle = "#87CEEB"; ctx.fillRect(0, 0, canvas.width, canvas.height * 0.7);
+        ctx.fillStyle = "#4a4a4a"; ctx.fillRect(0, canvas.height * 0.7, canvas.width, canvas.height * 0.3);
+
+        offset -= 15; // Train Speed
+        
+        // Draw passing localities
+        ctx.font = "bold 26px 'Bungee', sans-serif";
+        for(let i = 0; i < 6; i++) {
+            let xPos = (i * 600) + offset;
+            while (xPos < -600) xPos += 3600; 
+            ctx.fillStyle = "#2c3e50"; ctx.fillRect(xPos + 50, canvas.height * 0.4, 200, canvas.height * 0.3);
+            ctx.fillStyle = "#34495e"; ctx.fillRect(xPos + 100, canvas.height * 0.3, 100, canvas.height * 0.4);
+            ctx.fillStyle = "#fff"; ctx.fillText(localities[i % localities.length], xPos + 60, canvas.height * 0.65);
+        }
+
+        // Static foreground train
+        let trainY = canvas.height * 0.45;
+        let trainH = canvas.height * 0.4;
+        ctx.fillStyle = "#ecf0f1"; ctx.beginPath(); ctx.roundRect(100, trainY, 450, trainH, [30, 30, 0, 0]); ctx.fill();
+        ctx.strokeStyle = "#bdc3c7"; ctx.lineWidth = 2; ctx.stroke();
+        
+        // Train Color Line
+        ctx.fillStyle = selectedLine === 'Yellow' ? "#f5b800" : (selectedLine === 'Blue' ? "#2a75d3" : "#d6342c");
+        ctx.fillRect(100, trainY + (trainH * 0.7), 450, 15);
+
+        // Windows
+        ctx.fillStyle = "#111";
+        for(let w=0; w<4; w++) {
+            ctx.beginPath(); ctx.roundRect(140 + (w * 90), trainY + 30, 70, trainH * 0.4, 10); ctx.fill();
+        }
+
+        // Moving Tracks
+        ctx.strokeStyle = "#222"; ctx.lineWidth = 6; ctx.beginPath();
+        for(let t=0; t<canvas.width; t+=60) {
+            let lineX = (t + offset) % canvas.width;
+            if(lineX < 0) lineX += canvas.width;
+            ctx.moveTo(lineX, canvas.height * 0.9); ctx.lineTo(lineX + 30, canvas.height * 0.95);
+        }
+        ctx.stroke();
+
+        animationId = requestAnimationFrame(animateRide);
+    }
+
+    // Close modal if clicked outside
+    window.onclick = function(event) { if (event.target == modal) closeMetro(); }
+    </script>
+</body>
+</html>
